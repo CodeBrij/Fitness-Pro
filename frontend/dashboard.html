@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Homepage</title>
+  <style>
+    /* Style the button to look like a button */
+    .file-upload-button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+    }
+
+    /* Style the actual file input to be hidden */
+    .file-input {
+        display: none;
+    }
+</style>
+<script src="../backend/dashboard.js">
+  
+</script>
+  <link rel="stylesheet" href="./dashboard.css" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+
+</head>
+
+<body class="" style="background-color: #41a0ff;">
+  <nav class="" style="background-color: #333333;">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a class="flex items-center space-x-3 rtl:space-x-reverse">
+        <span class="self-center text-2xl font-semibold whitespace-nowrap hover:text-[wheat] dark:text-white" id="company-name"></span>
+      </a>
+      <button data-collapse-toggle="navbar-default" type="button"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        aria-controls="navbar-default" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15" />
+        </svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul
+          class="font-medium flex flex-col p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
+          <li>
+            <a href="./dashboard.html" onclick="sendTo('home')"
+              class="block py-2 px-3 rounded text-white hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Home</a>
+          </li>
+          <li>
+            <a href="https://cyrus-analytics-v1-i.streamlit.app/"
+              class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Analytics</a>
+          </li>
+          <li>
+            <a href="./calculator.html" onclick="sendTo('profile')"
+              class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">BMR Calculator</a>
+          </li>
+          <li>
+            <a href="./doctor.html" onclick="sendTo('contact')"
+              class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Health Experts</a>
+          </li>
+          <li>
+            <a href="./contactUs.html" onclick="sendTo('contact')"
+              class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Dashboard -->
+
+  <div class="bg-[#ffffff] rounded-md px-3 py-2 w-[90%] m-auto product-right mt-5 shadow-md">
+    <div class="md:flex md:justify-start block">
+      <div class="md:flex-row md:w-[50%] h-auto flex-start rounded-md p-5">
+        <img src="./img/register.webp" alt="Logo"
+          class="rounded-lg " style="height: 400px;" />
+      </div>
+      <div class="flex-col p-10">
+        <p class="font-bold text-2xl pb-5" id="product-name"></p>
+        <div class="">
+          <p class="font-semibold text-2xl mb-2">Welcome, Sairam<span></span></p>
+          <a href="https://health2-gvfhd3e6m22oa222vey2zr.streamlit.app/"><button class="bg-[#4180ff] file-upload-button" style="border-radius: 5px; ">Personalized Fitness Tracker</button></a>
+          <h2 id="available-quantity"></h2>
+        </div>
+        <div class="flex">
+          <h2 id="name"></h2>
+        </div>
+        <br>
+        <p class="font-semibold mb-2 text-xl">Today's Challenge</p>
+        <br>
+        <p class="font-regular mb-2 text-xl" id="challenge">Do 20 Burpees in 2 minutes! </p>
+        <p class="font-semibold mb-2 text-xl">Reward: 50 points</p>
+        <br><br>
+        <form action="#" onsubmit="showSubmittedAlert(); return false;">
+          <h1>File Upload Button</h1>
+
+          <!-- Button to trigger file upload dialog -->
+          <label for="file" class="file-upload-button">Choose File</label>
+          <input type="file" id="file" class="file-input">
+          
+          <button class="bg-[#4180ff] file-upload-button" style="border-radius: 5px; ">Submit</button>   
+          <a href="./rewards.html"><div class="file-upload-button">Redeem Rewards</div></a>
+          <!-- <div><a href="./rewards.html"><button style="border-radius: 5px;">Redeem Rewards</button></a></div> -->
+          <!-- <div class="text-white text-center md:block bg-indigo-500 cursor-pointer px-2 py-2 rounded hover:bg-indigo-300 hover:text-black mt-5" onclick="showSubmittedAlert()">
+          <a>Submit the Challenge</a> -->
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Put link of Diet Chart Page here -->
+  <a href="./dietChart.html">
+  <div class="bg-[#ffffff] rounded-md px-3 py-2 w-[90%] m-auto product-right mt-5 shadow-md">
+    <div class="md:flex md:justify-start block">
+      <div class="md:flex-row h-auto flex-start rounded-md p-5">
+        <img src="https://cdn.loveandlemons.com/wp-content/uploads/2020/06/IMG_25456.jpg" alt="Logo"
+          class="rounded-lg " style="height: 70px;" />
+      </div>
+      <div class="flex-col">
+        <p class="font-bold text-2xl pb-5" id="product-name"></p>
+        <div class="flex">
+          <p class="font-semibold text-2xl mb-2">Diet Charts <span></span></p>
+          <h2 id="available-quantity"></h2>
+        </div>
+        <div class="flex">
+          <p class="font-light text mb-2">Diet plans for your exploration.<span></span></p>
+          <h2 id="available-quantity"></h2>
+        </div>
+      </div>
+    </div>
+  </div></a>
+<!-- Put link of Physical exercise Page here -->
+  <a href="../exercises/exercise.html">
+  <div class="bg-[#ffffff] rounded-md px-3 py-2 w-[90%] m-auto product-right mt-5 shadow-md">
+    <div class="md:flex md:justify-start block">
+      <div class="md:flex-row h-auto flex-start rounded-md p-5">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8uto363ubEXcFdeQQqcAi95Gbis37Uu3jJg&usqp=CAU" alt="Logo"
+          class="rounded-lg " style="height: 70px;" />
+      </div>
+      <div class="flex-col">
+        <p class="font-bold text-2xl pb-5" id="product-name"></p>
+        <div class="flex">
+          <p class="font-semibold text-2xl mb-2">Physical Exercises<span></span></p>
+   
+        </div>
+        <div class="flex">
+          <p class="font-light text mb-2">Physical exercises with steps and filter as per your need.<span></span></p>
+   
+        </div>
+      </div>
+    </div>
+  </div></a>
+
+  <!-- Put link of Mental Health Analysis page here -->
+  <a href="./mentalTest.html">
+    <div class="bg-[#ffffff] rounded-md px-3 py-2 w-[90%] m-auto product-right mt-5 shadow-md">
+      <div class="md:flex md:justify-start block">
+        <div class="md:flex-row h-auto flex-start rounded-md p-5">
+          <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/iq-2708890-2249406.png?f=webp" alt="Logo"
+            class="rounded-lg " style="height: 70px;" />
+        </div>
+        <div class="flex-col">
+          <p class="font-bold text-2xl pb-5" id="product-name"></p>
+          <div class="flex">
+            <p class="font-semibold text-2xl mb-2">Mental State Analysis<span></span></p>
+       
+          </div>
+          <div class="flex">
+            <p class="font-light text mb-2">Scientifically designed test for analysis of mental state.<span></span></p>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <!-- Put link of Mental Health Page here -->
+  <a href="./mentalExercise.html">
+  <div class="bg-[#ffffff] rounded-md px-3 py-2 w-[90%] m-auto product-right mt-5 shadow-md">
+    <div class="md:flex md:justify-start block">
+      <div class="md:flex-row h-auto flex-start rounded-md p-5">
+        <img src="https://cdni.iconscout.com/illustration/premium/thumb/mental-exercises-5589824-4663483.png?f=webp" alt="Logo"
+          class="rounded-lg " style="height: 70px;" />
+      </div>
+      <div class="flex-col">
+        <p class="font-bold text-2xl pb-5" id="product-name"></p>
+        <div class="flex">
+          <p class="font-semibold text-2xl mb-2">Mental exercises and games<span></span></p>
+          <h2 id="available-quantity"></h2>
+        </div>
+        <div class="flex">
+          <p class="font-light text mb-2">Mental health exercises and games for the assistance.<span></span></p>
+          <h2 id="available-quantity"></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</a>
+</body>
+
+</html>

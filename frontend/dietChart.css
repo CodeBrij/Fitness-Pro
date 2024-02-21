@@ -1,0 +1,26 @@
+.main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+   
+}
+
+.card{
+   border: solid black 2px;
+   box-shadow:2px 0px 5px rgb(96, 96, 96);
+   padding: auto;
+}
+.head{
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: auto;
+    margin: 30px;
+}
+.head>h2{
+    color: rgb(83, 83, 104);
+}
+.nav-link{
+    color:white
+}
+
